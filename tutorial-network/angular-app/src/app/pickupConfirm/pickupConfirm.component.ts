@@ -260,9 +260,9 @@ export class pickupConfirmComponent implements OnInit {
   resetForm(): void {
     this.myForm.setValue({
       'patientName': null,
-      'prescription': null,
-      'patient': null,
-      'pharmacy': null,
+      'prescription': 'org.health.Prescription#',
+      'patient': 'org.health.Patient#',
+      'pharmacy': 'org.health.Pharmacy#',
       'transactionId': null,
       'timestamp': null
     });

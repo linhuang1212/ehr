@@ -42,8 +42,6 @@ export class createEHRComponent implements OnInit {
   doctor = new FormControl('', Validators.required);
   prescription = new FormControl('', Validators.required);
   company = new FormControl('', Validators.required);
-  transactionId = new FormControl('', Validators.required);
-  timestamp = new FormControl('', Validators.required);
 
 
   constructor(private servicecreateEHR: createEHRService, fb: FormBuilder) {
@@ -58,8 +56,6 @@ export class createEHRComponent implements OnInit {
       doctor: this.doctor,
       prescription: this.prescription,
       company: this.company,
-      transactionId: this.transactionId,
-      timestamp: this.timestamp
     });
   };
 
@@ -127,8 +123,6 @@ export class createEHRComponent implements OnInit {
       'doctor': this.doctor.value,
       'prescription': this.prescription.value,
       'company': this.company.value,
-      'transactionId': this.transactionId.value,
-      'timestamp': this.timestamp.value
     };
 
     this.myForm.setValue({
@@ -142,8 +136,6 @@ export class createEHRComponent implements OnInit {
       'doctor': null,
       'prescription': null,
       'company': null,
-      'transactionId': null,
-      'timestamp': null
     });
 
     return this.servicecreateEHR.addTransaction(this.Transaction)
@@ -161,8 +153,6 @@ export class createEHRComponent implements OnInit {
         'doctor': null,
         'prescription': null,
         'company': null,
-        'transactionId': null,
-        'timestamp': null
       });
     })
     .catch((error) => {
@@ -187,7 +177,6 @@ export class createEHRComponent implements OnInit {
       'doctor': this.doctor.value,
       'prescription': this.prescription.value,
       'company': this.company.value,
-      'timestamp': this.timestamp.value
     };
 
     return this.servicecreateEHR.updateTransaction(form.get('transactionId').value, this.Transaction)
@@ -245,8 +234,7 @@ export class createEHRComponent implements OnInit {
         'doctor': null,
         'prescription': null,
         'company': null,
-        'transactionId': null,
-        'timestamp': null
+
       };
 
       if (result.eId) {
@@ -309,17 +297,6 @@ export class createEHRComponent implements OnInit {
         formObject.company = null;
       }
 
-      if (result.transactionId) {
-        formObject.transactionId = result.transactionId;
-      } else {
-        formObject.transactionId = null;
-      }
-
-      if (result.timestamp) {
-        formObject.timestamp = result.timestamp;
-      } else {
-        formObject.timestamp = null;
-      }
 
       this.myForm.setValue(formObject);
 
@@ -343,12 +320,10 @@ export class createEHRComponent implements OnInit {
       'weight': null,
       'height': null,
       'history': null,
-      'patient': null,
-      'doctor': null,
-      'prescription': null,
-      'company': null,
-      'transactionId': null,
-      'timestamp': null
+      'patient': 'org.health.Patient#',
+      'doctor': 'org.health.Doctor#',
+      'prescription': 'org.health.Prescription#',
+      'company': 'org.health.InsuranceCompany#',
     });
   }
 }

@@ -233,7 +233,7 @@ export class updateRecordComponent implements OnInit {
 
   resetForm(): void {
     this.myForm.setValue({
-      'labrecord': null,
+      'labrecord': 'resource:org.health.labRecord#',
       'status': null,
       'transactionId': null,
       'timestamp': null

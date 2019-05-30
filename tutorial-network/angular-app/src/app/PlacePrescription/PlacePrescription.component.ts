@@ -37,8 +37,7 @@ export class PlacePrescriptionComponent implements OnInit {
   medicine = new FormControl('', Validators.required);
   doctorName = new FormControl('', Validators.required);
   patientName = new FormControl('', Validators.required);
-  transactionId = new FormControl('', Validators.required);
-  timestamp = new FormControl('', Validators.required);
+
 
 
   constructor(private servicePlacePrescription: PlacePrescriptionService, fb: FormBuilder) {
@@ -48,8 +47,7 @@ export class PlacePrescriptionComponent implements OnInit {
       medicine: this.medicine,
       doctorName: this.doctorName,
       patientName: this.patientName,
-      transactionId: this.transactionId,
-      timestamp: this.timestamp
+
     });
   };
 
@@ -112,8 +110,7 @@ export class PlacePrescriptionComponent implements OnInit {
       'medicine': this.medicine.value,
       'doctorName': this.doctorName.value,
       'patientName': this.patientName.value,
-      'transactionId': this.transactionId.value,
-      'timestamp': this.timestamp.value
+
     };
 
     this.myForm.setValue({
@@ -122,8 +119,7 @@ export class PlacePrescriptionComponent implements OnInit {
       'medicine': null,
       'doctorName': null,
       'patientName': null,
-      'transactionId': null,
-      'timestamp': null
+
     });
 
     return this.servicePlacePrescription.addTransaction(this.Transaction)
@@ -136,8 +132,7 @@ export class PlacePrescriptionComponent implements OnInit {
         'medicine': null,
         'doctorName': null,
         'patientName': null,
-        'transactionId': null,
-        'timestamp': null
+
       });
     })
     .catch((error) => {
@@ -157,7 +152,7 @@ export class PlacePrescriptionComponent implements OnInit {
       'medicine': this.medicine.value,
       'doctorName': this.doctorName.value,
       'patientName': this.patientName.value,
-      'timestamp': this.timestamp.value
+
     };
 
     return this.servicePlacePrescription.updateTransaction(form.get('transactionId').value, this.Transaction)
@@ -210,8 +205,7 @@ export class PlacePrescriptionComponent implements OnInit {
         'medicine': null,
         'doctorName': null,
         'patientName': null,
-        'transactionId': null,
-        'timestamp': null
+
       };
 
       if (result.doctor) {
@@ -244,17 +238,6 @@ export class PlacePrescriptionComponent implements OnInit {
         formObject.patientName = null;
       }
 
-      if (result.transactionId) {
-        formObject.transactionId = result.transactionId;
-      } else {
-        formObject.transactionId = null;
-      }
-
-      if (result.timestamp) {
-        formObject.timestamp = result.timestamp;
-      } else {
-        formObject.timestamp = null;
-      }
 
       this.myForm.setValue(formObject);
 
@@ -272,13 +255,12 @@ export class PlacePrescriptionComponent implements OnInit {
 
   resetForm(): void {
     this.myForm.setValue({
-      'doctor': null,
+      'doctor': 'org.health.Doctor#',
       'placeId': null,
       'medicine': null,
       'doctorName': null,
       'patientName': null,
-      'transactionId': null,
-      'timestamp': null
+
     });
   }
 }

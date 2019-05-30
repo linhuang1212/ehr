@@ -288,9 +288,9 @@ export class issueTestComponent implements OnInit {
       'labRecordId': null,
       'test': null,
       'status': null,
-      'patient': null,
-      'doctor': null,
-      'lab': null,
+      'patient': 'org.health.Patient#',
+      'doctor': 'org.health.Doctor#',
+      'lab': 'org.health.Lab#',
       'transactionId': null,
       'timestamp': null
     });

@@ -29,7 +29,7 @@
               <div class="form-group text-left">
                 <label for="doctor">doctor</label>
                 
-                    <textarea formControlName="doctor" class="form-control" rows="3"></textarea>
+                    <textarea formControlName="doctor" type="text" class="form-control"></textarea>
                 
               </div>
             
@@ -75,23 +75,7 @@
             
           
 
-            
-              <!-- <div class="form-group text-left">
-                <label for="transactionId">transactionId</label>
-                
-                  <input formControlName="transactionId" type="text" class="form-control">
-                
-              </div>
-            
-          
 
-            
-              <div class="form-group text-left">
-                <label for="timestamp">timestamp</label>
-                
-                  <input formControlName="timestamp" type="text" class="form-control">
-                
-              </div> -->
             
           
 
@@ -168,23 +152,7 @@
 
             </div>
           
-            <div class="form-group text-left">
-              <label for="transactionId">transactionId</label>
 
-              
-                <input [ngModel]="transactionId"formControlName="transactionId" type="text" class="form-control">
-              
-
-            </div>
-          
-            <div class="form-group text-left">
-              <label for="timestamp">timestamp</label>
-
-              
-                <input [ngModel]="timestamp"formControlName="timestamp" type="text" class="form-control">
-              
-
-            </div>
           
 
 
@@ -276,13 +244,6 @@
               
             
 
-              
-                <li><span class="attribute"><b>transactionId</b></span></li>
-              
-            
-
-              
-                <li><span class="attribute"><b>timestamp</b></span></li>
               
             
           </ul>
